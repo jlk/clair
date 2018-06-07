@@ -90,6 +90,8 @@ func LoadConfig(path string) (config *Config, err error) {
 	// Set values as loaded by Viper. I think this is short term fix - probably better to use the viper code in the rest of Clair...
 	var cfgFile File
 	cfgFile.Clair = DefaultConfig()
+	cfgFile.Clair.Database.Options = map[string]interface{}{}
+
 	if clairConfig.IsSet("clair.database.type") {
 		cfgFile.Clair.Database.Type = clairConfig.GetString("clair.database.type")
 	}
