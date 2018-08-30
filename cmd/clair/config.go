@@ -99,7 +99,7 @@ func LoadConfig(path string) (config *Config, err error) {
 		cfgFile.Clair.Database.Options["source"] = clairConfig.GetString("clair.database.options.source")
 	}
 	if clairConfig.IsSet("clair.database.options.cachesize") {
-		cfgFile.Clair.Database.Options["cachesize"] = clairConfig.GetString("clair.database.options.cachesize")
+		cfgFile.Clair.Database.Options["cachesize"] = clairConfig.GetInt("clair.database.options.cachesize")
 	}
 	if clairConfig.IsSet("clair.database.options.paginationkey") {
 		cfgFile.Clair.Database.Options["paginationkey"] = clairConfig.GetString("clair.database.options.paginationkey")
